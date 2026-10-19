@@ -13,7 +13,7 @@
 import { DurableObject } from "cloudflare:workers";
 import { withWorkspace, getWorkspace, type DurableObjectStorageLike, type WorkspaceHandle } from "@cloudflare/computer";
 import { WorkerShellBackend, WorkspaceFsAdapter, type WorkerShellLoader } from "@cloudflare/computer/backends/worker-shell";
-import { CloudflareContainerBackend, withWorkspaceContainer } from "@cloudflare/computer/backends/container";
+import { ContainerBackend as CloudflareContainerBackend, withWorkspaceContainer } from "@cloudflare/computer/backends/container";
 import { Bash, NetworkAccessDeniedError, defineCommand, type SecureFetch } from "just-bash";
 
 // isolate shell 的动态 Worker 通过这个服务代理回连本 Worker 的 Workspace，必须从入口导出；
